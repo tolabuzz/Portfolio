@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "Nigeria",
     "PwC",
     "Reliance Health",
-    "Coronation Insurance",
+    "Coronation Life Assurance",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,

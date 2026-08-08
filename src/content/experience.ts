@@ -11,7 +11,7 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     id: "coronation-insurance",
-    company: "Coronation Insurance",
+    company: "Coronation Life Assurance",
     role: "Team Lead, Strategy and PMO",
     start: "August 2026",
     end: "Present",

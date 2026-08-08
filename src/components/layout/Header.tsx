@@ -42,19 +42,23 @@ export default function Header() {
         <ul className="hidden items-center gap-4 font-label text-label-caps uppercase tracking-widest md:flex lg:gap-8">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.href);
+            const linkClassName = cn(
+              "border-b-2 pb-1 transition-colors",
+              isActive
+                ? "border-primary text-primary"
+                : "border-transparent text-on-surface-variant hover:text-primary"
+            );
             return (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "border-b-2 pb-1 transition-colors",
-                    isActive
-                      ? "border-primary text-primary"
-                      : "border-transparent text-on-surface-variant hover:text-primary"
-                  )}
-                >
-                  {link.label}
-                </Link>
+                {"zone" in link && link.zone ? (
+                  <a href={link.href} className={linkClassName}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link href={link.href} className={linkClassName}>
+                    {link.label}
+                  </Link>
+                )}
               </li>
             );
           })}
@@ -100,21 +104,31 @@ export default function Header() {
           className="border-t border-outline-variant/30 bg-background md:hidden"
         >
           <Container className="flex flex-col gap-1 py-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMobileMenu}
-                className={cn(
-                  "rounded-md px-2 py-3 font-label text-label-caps uppercase tracking-widest transition-colors hover:bg-surface-container-low hover:text-primary",
-                  isActiveLink(link.href)
-                    ? "text-primary"
-                    : "text-on-surface-variant"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const mobileClassName = cn(
+                "rounded-md px-2 py-3 font-label text-label-caps uppercase tracking-widest transition-colors hover:bg-surface-container-low hover:text-primary",
+                isActiveLink(link.href) ? "text-primary" : "text-on-surface-variant"
+              );
+              return "zone" in link && link.zone ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className={mobileClassName}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className={mobileClassName}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
               onClick={closeMobileMenu}

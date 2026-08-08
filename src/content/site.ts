@@ -3,7 +3,7 @@ export const site = {
   title: "Tola Oladiji | Strategy, Transformation & Operations",
   description:
     "Tola Oladiji is a Strategy, Transformation, and Operations professional who partners with executive teams to turn complex organizational challenges into measurable, sustainable outcomes.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://tolaoladiji.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://tolaoladiji.xyz",
   ogImage: "/images/tola-oladiji-portrait.jpg",
   email: "tolaoladiji@outlook.com",
   linkedin: "https://www.linkedin.com/in/tolaoladiji",

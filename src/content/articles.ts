@@ -928,7 +928,7 @@ export const articles: Article[] = [
   {
     slug: "five-lessons-from-would-you-hire-you",
     title: "Five Lessons From Would You Hire You? That Made Me Reflect on How I Work",
-    category: "Leadership",
+    category: "Career",
     description:
       "Five ideas from Matt Adolphe's Would You Hire You? that changed how I think about solving problems, building trust, and my own blind spots.",
     date: "2026-05-06",
@@ -1002,26 +1002,6 @@ export const articles: Article[] = [
       p("Would you enjoy managing yourself?"),
       p("If any of those answers make you uncomfortable, that is not necessarily a bad thing."),
       p("It may simply show you where the next stage of your growth needs to begin."),
-    ],
-  },
-  {
-    slug: "three-more-habits-worth-stealing",
-    title: "Three More Habits Worth Stealing",
-    category: "Productivity",
-    description:
-      "Three more small habits worth adopting, from a three-line to-do list to a ten-minute rule for beating procrastination.",
-    date: "2026-04-29",
-    readingTime: "1 min read",
-    body: [
-      p("For a long time I thought productivity required a complex system. It turns out the tiny habits, the ones that feel too small to matter, made the biggest difference."),
-      p("Here are three that changed the game for me."),
-      p("Starting the day with a three-line to-do list."),
-      p("I used to overload my task list and feel defeated by mid-afternoon. Now I pick three high-impact tasks each morning and win the day before lunch."),
-      p("Using the ten-minute rule to beat procrastination."),
-      p("When I don't feel like starting something, I tell myself to just do it for ten minutes. Nine times out of ten I keep going, because starting is always the hardest part."),
-      p("Closing the day with a short review."),
-      p("Every evening I ask myself what I learned that day and what I could do better tomorrow. It keeps me grounded and focused on progress instead of perfection."),
-      p("Productivity was never about doing more. It's about doing what matters, with clarity and consistency."),
     ],
   },
   {

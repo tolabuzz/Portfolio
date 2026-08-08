@@ -5,7 +5,7 @@ import BeyondWork from "@/components/sections/BeyondWork";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "A concise introduction to Tola Oladiji's background across strategy, transformation, executive operations, consulting, technology, and healthcare.",
+    "A concise introduction to Tola Oladiji's background across strategy, transformation, operations, consulting, technology, and healthcare.",
   alternates: { canonical: "/about" },
 };
 

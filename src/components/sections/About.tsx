@@ -22,16 +22,17 @@ export default function About({
           </p>
           <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
             My work sits at the intersection of strategy, transformation, and
-            executive operations, built on a foundation of consulting rigor
+            operations, built on a foundation of consulting rigor
             from PwC Nigeria and applied directly inside fast-moving
-            technology and healthcare organizations. I&apos;ve led pricing and
-            growth strategy, supported organization-wide transformation
-            programs, and now partner directly with a CEO on the strategic
-            and operational priorities that keep a business moving in the
-            same direction. Across every engagement, I bring the same
-            combination of analytical rigor, clear communication, and a bias
-            toward execution — backed by hands-on experience in analytics and
-            organizational change.
+            technology, healthcare, and financial services organizations.
+            I&apos;ve led pricing and growth strategy, supported
+            organization-wide transformation programs, and served as Chief
+            of Staff to a CEO — and now lead strategy and PMO for an
+            insurance business, turning strategic priorities into a
+            disciplined portfolio of execution. Across every engagement, I
+            bring the same combination of analytical rigor, clear
+            communication, and a bias toward execution — backed by hands-on
+            experience in analytics and organizational change.
           </p>
         </div>
 

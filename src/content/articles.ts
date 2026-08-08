@@ -48,15 +48,15 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "ai-productivity-executive-operations",
-    title: "Where AI Actually Helps in Executive Operations",
+    slug: "ai-productivity-operations",
+    title: "Where AI Actually Helps in Operations",
     category: "AI & Productivity",
     description:
-      "Not every AI use case in executive operations is worth the effort. A few honestly are.",
+      "Not every AI use case in operations is worth the effort. A few honestly are.",
     date: "2025-09-20",
     readingTime: "6 min read",
     body: [
-      "There's a lot of noise about AI transforming executive operations, and a lot of it doesn't survive contact with a real board reporting cycle. The use cases that hold up tend to be narrower and less exciting than the pitch decks suggest.",
+      "There's a lot of noise about AI transforming operations, and a lot of it doesn't survive contact with a real board reporting cycle. The use cases that hold up tend to be narrower and less exciting than the pitch decks suggest.",
       "Synthesizing first drafts of recurring reports, surfacing anomalies in operating data before a review, and speeding up the first pass of research — these save real time. Replacing judgment on ambiguous, high-stakes decisions is a different matter entirely.",
       "The organizations getting the most value aren't the ones with the most tools. They're the ones that were honest about which parts of the job are repeatable, and automated exactly those.",
     ],

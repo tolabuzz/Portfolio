@@ -1,13 +1,15 @@
 export const site = {
   name: "Tola Oladiji",
-  title: "Tola Oladiji | Strategy, Transformation & Executive Operations",
+  title: "Tola Oladiji | Strategy, Transformation & Operations",
   description:
-    "Tola Oladiji is a Strategy, Transformation, and Executive Operations professional who partners with executive teams to turn complex organizational challenges into measurable, sustainable outcomes.",
+    "Tola Oladiji is a Strategy, Transformation, and Operations professional who partners with executive teams to turn complex organizational challenges into measurable, sustainable outcomes.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://tolaoladiji.vercel.app",
   ogImage: "/images/tola-oladiji-portrait.jpg",
   email: "tolaoladiji@outlook.com",
   linkedin: "https://www.linkedin.com/in/tolaoladiji",
-  roles: ["Strategy", "Transformation", "Executive Operations"],
+  instagram: "https://www.instagram.com/tolaoladiji",
+  twitter: "https://x.com/tolaoladiji",
+  roles: ["Strategy", "Transformation", "Operations"],
   positioningStatement:
     "I partner with executive teams to turn complex organizational challenges into clear strategy, disciplined execution, and measurable results — across consulting, technology, and healthcare.",
   heroPhoto: {
@@ -27,5 +29,7 @@ export const navLinks = [
 
 export const socialLinks = {
   linkedin: site.linkedin,
+  instagram: site.instagram,
+  twitter: site.twitter,
   email: `mailto:${site.email}`,
 } as const;

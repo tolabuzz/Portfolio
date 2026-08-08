@@ -4,7 +4,7 @@ import Expertise from "@/components/sections/Expertise";
 export const metadata: Metadata = {
   title: "Expertise",
   description:
-    "Capabilities across strategy, strategy execution, transformation, executive operations, analytics, and project delivery.",
+    "Capabilities across strategy, strategy execution, transformation, operations, analytics, and project delivery.",
   alternates: { canonical: "/expertise" },
 };
 

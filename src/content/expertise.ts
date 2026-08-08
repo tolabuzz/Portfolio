@@ -34,7 +34,7 @@ export const expertiseGroups: ExpertiseGroup[] = [
     ],
   },
   {
-    group: "Executive Operations",
+    group: "Operations",
     items: [
       "Board Reporting",
       "Investor Reporting",

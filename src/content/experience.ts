@@ -10,16 +10,27 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
+    id: "coronation-insurance",
+    company: "Coronation Insurance",
+    role: "Team Lead, Strategy and PMO",
+    start: "August 2026",
+    end: "Present",
+    current: true,
+    achievements: [
+      "Leading strategy and PMO efforts, translating strategic priorities into a disciplined portfolio of cross-functional projects.",
+      "Owning program governance and reporting cadence to keep delivery aligned with strategic priorities.",
+    ],
+  },
+  {
     id: "reliance-health",
     company: "Reliance Health",
     role: "Chief of Staff",
     start: "September 2025",
-    end: "Present",
-    current: true,
+    end: "August 2026",
     achievements: [
-      "Partner to the CEO and executive leadership team on enterprise-wide strategic priorities and executive decision support.",
-      "Own the executive and board reporting cadence, translating strategy into a clear operating rhythm across the business.",
-      "Lead cross-functional strategic projects spanning growth, operations, and organizational effectiveness.",
+      "Partnered with the CEO and executive leadership team on enterprise-wide strategic priorities and executive decision support.",
+      "Owned the executive and board reporting cadence, translating strategy into a clear operating rhythm across the business.",
+      "Led cross-functional strategic projects spanning growth, operations, and organizational effectiveness.",
     ],
   },
   {

@@ -14,23 +14,29 @@ export default function About({
           About
         </Heading>
         <p className="mt-6 font-body text-body-lg text-on-surface">
-          I help executive teams turn complex, ambiguous problems into
-          strategy that actually gets executed — and operations that hold up
-          once the plan meets reality.
+          I&apos;m a strategy and transformation professional with a track
+          record of helping organizations move from complexity to clarity.
+          Over the past few years, I&apos;ve led strategy development,
+          business transformation, and execution planning across consulting
+          and industry—working with executives, cross-functional teams, and
+          government stakeholders to deliver results that matter.
         </p>
         <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
-          My work sits at the intersection of strategy, transformation, and
-          operations, built on a foundation of consulting rigor from PwC
-          Nigeria and applied directly inside fast-moving technology,
-          healthcare, and financial services organizations. I&apos;ve led
-          pricing and growth strategy, supported organization-wide
-          transformation programs, and served as Chief of Staff to a CEO —
-          and now lead strategy and PMO for an insurance business, turning
-          strategic priorities into a disciplined portfolio of execution.
-          Across every engagement, I bring the same combination of
-          analytical rigor, clear communication, and a bias toward execution
-          — backed by hands-on experience in analytics and organizational
-          change.
+          My background spans strategy formulation, project execution, data
+          analytics, performance improvement, and digital transformation.
+          I&apos;ve supported in designing national reform programs, advised
+          tax authorities on data harmonization, led commercial recovery
+          efforts, and driven process improvements that unlocked revenue and
+          reduced costs.
+        </p>
+        <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
+          Beyond the numbers, I actually care about building systems that
+          help organizations unlock revenue and maximize shareholder value.
+        </p>
+        <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
+          Let&apos;s connect if you&apos;re building something ambitious, or
+          just enjoy a good conversation about strategy, leadership, or
+          career growth.
         </p>
       </Container>
     </section>

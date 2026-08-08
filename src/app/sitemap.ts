@@ -4,13 +4,15 @@ import { projects } from "@/content/projects";
 import { articles } from "@/content/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes = ["", "/about", "/experience", "/work", "/expertise", "/insights", "/contact"];
+
   const routes: MetadataRoute.Sitemap = [
-    {
-      url: site.url,
+    ...staticRoutes.map((path) => ({
+      url: `${site.url}${path}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
+      changeFrequency: "monthly" as const,
+      priority: path === "" ? 1 : 0.8,
+    })),
     ...projects.map((project) => ({
       url: `${site.url}/work/${project.slug}`,
       lastModified: new Date(),

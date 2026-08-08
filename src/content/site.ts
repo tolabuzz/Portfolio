@@ -18,11 +18,11 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Work", href: "#work" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Insights", href: "#insights" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Work", href: "/work" },
+  { label: "Expertise", href: "/expertise" },
+  { label: "Insights", href: "/insights" },
 ] as const;
 
 export const socialLinks = {

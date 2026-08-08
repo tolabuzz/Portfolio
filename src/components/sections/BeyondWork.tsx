@@ -4,10 +4,7 @@ import { beyondWork } from "@/content/beyondWork";
 
 export default function BeyondWork() {
   return (
-    <section
-      id="beyond-work"
-      className="border-t border-outline-variant/20 bg-surface-container-lowest py-16 md:py-[80px]"
-    >
+    <section className="border-t border-outline-variant/20 bg-surface-container-lowest py-16 md:py-[80px]">
       <Container>
         <SectionHeading
           title="Beyond Work"

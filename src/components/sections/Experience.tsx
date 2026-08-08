@@ -2,14 +2,15 @@ import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { experience } from "@/content/experience";
 
-export default function Experience() {
+export default function Experience({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   return (
-    <section
-      id="experience"
-      className="border-t border-outline-variant/20 bg-surface-container-lowest py-16 md:py-[80px]"
-    >
+    <section className="py-16 md:py-[80px]">
       <Container>
-        <SectionHeading title="Experience" />
+        <SectionHeading level={headingLevel} title="Experience" />
 
         <div className="flex flex-col">
           {experience.map((role, index) => (

@@ -9,32 +9,8 @@ import { cn } from "@/lib/cn";
 
 export default function Header() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const [activeHash, setActiveHash] = useState<string>("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    if (!isHome) return;
-
-    const sections = navLinks
-      .map((link) => document.querySelector(link.href))
-      .filter((el): el is Element => Boolean(el));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveHash(`#${entry.target.id}`);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [isHome]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -45,7 +21,8 @@ export default function Header() {
 
   const closeMobileMenu = () => setMobileOpen(false);
 
-  const homeHref = (hash: string) => (isHome ? hash : `/${hash}`);
+  const isActiveLink = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header
@@ -64,12 +41,11 @@ export default function Header() {
 
         <ul className="hidden items-center gap-4 font-label text-label-caps uppercase tracking-widest md:flex lg:gap-8">
           {navLinks.map((link) => {
-            const href = homeHref(link.href);
-            const isActive = isHome && activeHash === link.href;
+            const isActive = isActiveLink(link.href);
             return (
               <li key={link.href}>
-                <a
-                  href={href}
+                <Link
+                  href={link.href}
                   className={cn(
                     "border-b-2 pb-1 transition-colors",
                     isActive
@@ -78,19 +54,19 @@ export default function Header() {
                   )}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             );
           })}
         </ul>
 
         <div className="hidden shrink-0 md:block">
-          <a
-            href={homeHref("#contact")}
+          <Link
+            href="/contact"
             className="whitespace-nowrap rounded-full bg-primary px-5 py-3 font-label text-label-caps uppercase text-on-primary shadow-sm transition-colors hover:bg-primary-container lg:px-6"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         <button
@@ -125,22 +101,27 @@ export default function Header() {
         >
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={homeHref(link.href)}
+                href={link.href}
                 onClick={closeMobileMenu}
-                className="rounded-md px-2 py-3 font-label text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors hover:bg-surface-container-low hover:text-primary"
+                className={cn(
+                  "rounded-md px-2 py-3 font-label text-label-caps uppercase tracking-widest transition-colors hover:bg-surface-container-low hover:text-primary",
+                  isActiveLink(link.href)
+                    ? "text-primary"
+                    : "text-on-surface-variant"
+                )}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href={homeHref("#contact")}
+            <Link
+              href="/contact"
               onClick={closeMobileMenu}
               className="mt-2 rounded-full bg-primary px-6 py-3 text-center font-label text-label-caps uppercase text-on-primary"
             >
               Contact
-            </a>
+            </Link>
           </Container>
         </div>
       )}

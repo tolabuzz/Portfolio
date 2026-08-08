@@ -1,14 +1,20 @@
 import Container from "@/components/layout/Container";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
-export default function About() {
+export default function About({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
+
   return (
-    <section id="about" className="py-16 md:py-[80px]">
+    <section className="py-16 md:py-[80px]">
       <Container className="grid grid-cols-4 items-center gap-gutter md:grid-cols-12">
         <div className="col-span-4 md:col-span-6 md:pr-12">
-          <h2 className="font-display text-display-lg-mobile text-primary md:text-display-lg">
+          <Heading className="font-display text-display-lg-mobile text-primary md:text-display-lg">
             About
-          </h2>
+          </Heading>
           <p className="mt-6 font-body text-body-lg text-on-surface">
             I help executive teams turn complex, ambiguous problems into
             strategy that actually gets executed — and operations that hold

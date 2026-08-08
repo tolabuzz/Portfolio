@@ -2,13 +2,19 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import { site } from "@/content/site";
 
-export default function Contact() {
+export default function Contact({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
+
   return (
-    <section id="contact" className="py-16 md:py-[80px]">
+    <section className="py-16 md:py-[80px]">
       <Container className="text-center">
-        <h2 className="mx-auto max-w-2xl font-display text-display-lg-mobile text-primary md:text-display-lg">
+        <Heading className="mx-auto max-w-2xl font-display text-display-lg-mobile text-primary md:text-display-lg">
           Let&apos;s work together
-        </h2>
+        </Heading>
         <p className="mx-auto mt-6 max-w-xl font-body text-body-lg text-on-surface-variant">
           Open to conversations about strategy, transformation, and executive
           operations roles or engagements. The fastest way to reach me is

@@ -46,7 +46,7 @@ export default async function ProjectPage({
     <article className="py-16 md:py-[80px]">
       <Container className="max-w-4xl">
         <Link
-          href="/#work"
+          href="/work"
           className="inline-flex items-center gap-1 font-label text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
         >
           <svg

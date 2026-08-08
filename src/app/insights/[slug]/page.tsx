@@ -47,7 +47,7 @@ export default async function ArticlePage({
     <article className="py-16 md:py-[80px]">
       <Container className="max-w-3xl">
         <Link
-          href="/#insights"
+          href="/insights"
           className="inline-flex items-center gap-1 font-label text-label-caps uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
         >
           <svg

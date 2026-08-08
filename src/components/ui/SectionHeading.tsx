@@ -6,13 +6,17 @@ export default function SectionHeading({
   description,
   align = "left",
   className,
+  level = "h2",
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
   className?: string;
+  level?: "h1" | "h2";
 }) {
+  const Heading = level;
+
   return (
     <div
       className={cn(
@@ -26,9 +30,9 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="font-display text-display-lg-mobile text-primary md:text-display-lg">
+      <Heading className="font-display text-display-lg-mobile text-primary md:text-display-lg">
         {title}
-      </h2>
+      </Heading>
       {description && (
         <p
           className={cn(

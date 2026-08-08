@@ -2,14 +2,15 @@ import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { expertiseGroups } from "@/content/expertise";
 
-export default function Expertise() {
+export default function Expertise({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   return (
-    <section
-      id="expertise"
-      className="border-t border-outline-variant/20 bg-surface-container-lowest py-16 md:py-[80px]"
-    >
+    <section className="py-16 md:py-[80px]">
       <Container>
-        <SectionHeading title="Areas of Expertise" />
+        <SectionHeading level={headingLevel} title="Areas of Expertise" />
         <div className="grid grid-cols-1 gap-x-gutter gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {expertiseGroups.map((group) => (
             <div key={group.group}>

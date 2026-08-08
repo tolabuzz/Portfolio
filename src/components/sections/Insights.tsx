@@ -5,14 +5,19 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { articles } from "@/content/articles";
 import { formatDate } from "@/lib/format";
 
-export default function Insights() {
+export default function Insights({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   const featured = articles.find((article) => article.featured) ?? articles[0];
   const rest = articles.filter((article) => article.slug !== featured.slug);
 
   return (
-    <section id="insights" className="py-16 md:py-[80px]">
+    <section className="py-16 md:py-[80px]">
       <Container>
         <SectionHeading
+          level={headingLevel}
           title="Insights"
           description="Notes on strategy, transformation, and leadership."
         />

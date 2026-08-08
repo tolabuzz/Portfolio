@@ -3,11 +3,16 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { projects } from "@/content/projects";
 
-export default function SelectedWork() {
+export default function SelectedWork({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   return (
-    <section id="work" className="py-16 md:py-[80px]">
+    <section className="py-16 md:py-[80px]">
       <Container>
         <SectionHeading
+          level={headingLevel}
           title="Selected Work"
           description="A sample of strategy, transformation, and operations work — anonymized where the underlying engagement is confidential."
         />

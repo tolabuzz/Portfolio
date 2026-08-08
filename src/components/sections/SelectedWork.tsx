@@ -14,7 +14,7 @@ export default function SelectedWork({
         <SectionHeading
           level={headingLevel}
           title="Selected Work"
-          description="A sample of strategy, transformation, and operations work — anonymized where the underlying engagement is confidential."
+          description="A closer look at some of the business problems I have worked on, how I approached them, and the results delivered."
         />
         <div className="grid grid-cols-1 gap-gutter md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

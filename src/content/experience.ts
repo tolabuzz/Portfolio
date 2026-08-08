@@ -48,7 +48,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: "pwc-nigeria",
     company: "PwC Nigeria",
-    role: "Strategy Consultant",
+    role: "Senior Consultant",
     start: "May 2021",
     end: "October 2024",
     achievements: [

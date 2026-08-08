@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "Tola Oladiji",
-    "Strategy Consultant",
+    "Senior Consultant",
     "Transformation Leader",
     "Chief of Staff",
     "Strategy and PMO",

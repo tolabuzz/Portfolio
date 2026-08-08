@@ -13,7 +13,7 @@ export default function About({
         <Heading className="font-display text-display-lg-mobile text-primary md:text-display-lg">
           About
         </Heading>
-        <p className="mt-6 font-body text-body-lg text-on-surface">
+        <p className="mt-6 font-body text-body-lg text-on-surface-variant">
           I&apos;m a strategy and transformation professional with a track
           record of helping organizations move from complexity to clarity.
           Over the past few years, I&apos;ve led strategy development,

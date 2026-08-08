@@ -19,7 +19,7 @@ export default function Insights({
         <SectionHeading
           level={headingLevel}
           title="Insights"
-          description="Notes on strategy, transformation, and leadership."
+          description="Notes on strategy, leadership, career growth, and the habits that make work better."
         />
 
         <Link

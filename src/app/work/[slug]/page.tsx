@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Button from "@/components/ui/Button";
 import { projects, getProjectBySlug } from "@/content/projects";
 import { site } from "@/content/site";
@@ -82,16 +81,6 @@ export default async function ProjectPage({
             </p>
           </div>
         )}
-
-        <div className="mt-12 grid grid-cols-1 gap-gutter sm:grid-cols-2">
-          {project.visuals.map((visual) => (
-            <ImagePlaceholder
-              key={visual.label}
-              label={visual.label}
-              kind={visual.kind}
-            />
-          ))}
-        </div>
 
         <div className="mt-16 space-y-12">
           <section>

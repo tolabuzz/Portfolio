@@ -1,8 +1,3 @@
-export type ProjectVisual = {
-  label: string;
-  kind: "diagram" | "framework" | "screenshot" | "chart";
-};
-
 export type Project = {
   slug: string;
   title: string;
@@ -14,7 +9,6 @@ export type Project = {
   approach: string[];
   myRole: string;
   keyLessons: string[];
-  visuals: ProjectVisual[];
 };
 
 // Selected Work — reusable case-study records. Add a new object here to add
@@ -43,11 +37,6 @@ export const projects: Project[] = [
       "Pricing change lands best when it is sequenced by customer segment, not rolled out uniformly.",
       "Governance is what makes a pricing transformation durable rather than a one-time reset.",
     ],
-    visuals: [
-      { label: "Customer segmentation framework", kind: "framework" },
-      { label: "Pricing governance model", kind: "diagram" },
-      { label: "ARR impact summary", kind: "chart" },
-    ],
   },
   {
     slug: "collections-recovery-strategy",
@@ -72,10 +61,6 @@ export const projects: Project[] = [
       "A shared, visible dashboard changes behavior faster than policy alone.",
       "Executive escalation works best when it's reserved for a short, well-defined list of accounts.",
     ],
-    visuals: [
-      { label: "Collections dashboard", kind: "screenshot" },
-      { label: "Escalation workflow", kind: "diagram" },
-    ],
   },
   {
     slug: "organizational-transformation",
@@ -97,10 +82,6 @@ export const projects: Project[] = [
     keyLessons: [
       "Change at this scale succeeds or fails on middle-management buy-in, not just executive sponsorship.",
       "Sequencing matters more than speed when a workforce this large is affected.",
-    ],
-    visuals: [
-      { label: "Target operating model", kind: "framework" },
-      { label: "Change readiness heatmap", kind: "chart" },
     ],
   },
   {
@@ -124,10 +105,6 @@ export const projects: Project[] = [
       "The highest-impact automation is usually the least visible process, not the flashiest one.",
       "Adoption depends on designing tools around how teams already work, not the reverse.",
     ],
-    visuals: [
-      { label: "Process automation map", kind: "diagram" },
-      { label: "Efficiency impact summary", kind: "chart" },
-    ],
   },
   {
     slug: "revenue-growth-strategy",
@@ -150,10 +127,6 @@ export const projects: Project[] = [
     keyLessons: [
       "A small number of well-chosen growth bets outperform a long list of good ideas.",
       "Growth strategy holds up only when it's paired with a way to track progress against it.",
-    ],
-    visuals: [
-      { label: "Growth opportunity matrix", kind: "framework" },
-      { label: "Revenue growth trend", kind: "chart" },
     ],
   },
 ];

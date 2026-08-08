@@ -5,7 +5,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group flex flex-col rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,163,228,0.12)]"
+      className="group flex flex-col rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(197,104,74,0.18)]"
     >
       <p className="font-label text-label-caps uppercase tracking-widest text-secondary">
         {project.category}

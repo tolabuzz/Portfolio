@@ -24,7 +24,7 @@ export default function Insights({
 
         <Link
           href={`/insights/${featured.slug}`}
-          className="group grid grid-cols-1 gap-6 rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-8 transition-shadow hover:shadow-[0_10px_30px_rgba(0,163,228,0.12)] md:grid-cols-12 md:gap-gutter md:p-10"
+          className="group grid grid-cols-1 gap-6 rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-8 transition-shadow hover:shadow-[0_10px_30px_rgba(197,104,74,0.18)] md:grid-cols-12 md:gap-gutter md:p-10"
         >
           <div className="md:col-span-8">
             <span className="inline-flex w-fit items-center rounded-full bg-primary/15 px-3 py-1 font-label text-label-caps uppercase tracking-widest text-primary">

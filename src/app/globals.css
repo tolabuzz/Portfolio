@@ -1,43 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color system — derived from the Stitch "Organic Modernist" design tokens */
-  --color-surface: #f9f9f9;
-  --color-surface-dim: #dadada;
-  --color-surface-bright: #f9f9f9;
+  /* Color system — "Espresso & Terracotta" palette */
+  --color-surface: #ffffff;
+  --color-surface-dim: #f5f5f5;
+  --color-surface-bright: #ffffff;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f3f4;
-  --color-surface-container: #eeeeee;
-  --color-surface-container-high: #e8e8e8;
-  --color-surface-container-highest: #e2e2e2;
-  --color-on-surface: #1a1c1c;
-  --color-on-surface-variant: #3e4850;
-  --color-inverse-surface: #2f3131;
-  --color-inverse-on-surface: #f0f1f1;
-  --color-outline: #6e7881;
-  --color-outline-variant: #bdc8d1;
+  --color-surface-container-low: #f5f5f5;
+  --color-surface-container: #f5f5f5;
+  --color-surface-container-high: #efedec;
+  --color-surface-container-highest: #e5e1df;
+  --color-on-surface: #211d1b;
+  --color-on-surface-variant: #706864;
+  --color-inverse-surface: #211713;
+  --color-inverse-on-surface: #ffffff;
+  --color-outline: #706864;
+  --color-outline-variant: #706864;
 
-  --color-primary: #00658f;
+  --color-primary: #34251f;
   --color-on-primary: #ffffff;
-  --color-primary-container: #00a3e4;
-  --color-on-primary-container: #00354d;
-  --color-inverse-primary: #86cfff;
+  --color-primary-container: #c5684a;
+  --color-on-primary-container: #ffffff;
+  --color-inverse-primary: #c5684a;
 
-  --color-secondary: #914c00;
+  --color-secondary: #a94f35;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #fe8a0a;
-  --color-on-secondary-container: #613100;
+  --color-secondary-container: #c5684a;
+  --color-on-secondary-container: #34251f;
 
-  --color-tertiary: #006497;
+  --color-tertiary: #c5684a;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #4da0dd;
-  --color-on-tertiary-container: #003452;
+  --color-tertiary-container: #c5684a;
+  --color-on-tertiary-container: #ffffff;
 
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
 
-  --color-background: #f9f9f9;
-  --color-on-background: #1a1c1c;
+  --color-background: #ffffff;
+  --color-on-background: #211d1b;
 
   /* Typography — font families are supplied as CSS vars by next/font in layout.tsx */
   --font-display: var(--font-comfortaa), ui-sans-serif, system-ui, sans-serif;
@@ -106,13 +106,6 @@ body {
 ::selection {
   background: var(--color-tertiary-container);
   color: var(--color-on-tertiary-container);
-}
-
-.hairline-t {
-  border-top: 1px solid rgb(110 120 129 / 0.2);
-}
-.hairline-b {
-  border-bottom: 1px solid rgb(110 120 129 / 0.2);
 }
 
 /* Visible, high-contrast focus ring for keyboard users */

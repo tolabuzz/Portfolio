@@ -21,7 +21,7 @@ export default function About({
           and industry—working with executives, cross-functional teams, and
           government stakeholders to deliver results that matter.
         </p>
-        <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
+        <p className="mt-6 font-body text-body-lg leading-relaxed text-on-surface-variant">
           My background spans strategy formulation, project execution, data
           analytics, performance improvement, and digital transformation.
           I&apos;ve supported in designing national reform programs, advised
@@ -29,11 +29,11 @@ export default function About({
           efforts, and driven process improvements that unlocked revenue and
           reduced costs.
         </p>
-        <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
+        <p className="mt-6 font-body text-body-lg leading-relaxed text-on-surface-variant">
           Beyond the numbers, I actually care about building systems that
           help organizations unlock revenue and maximize shareholder value.
         </p>
-        <p className="mt-6 font-body text-body-md leading-relaxed text-on-surface-variant">
+        <p className="mt-6 font-body text-body-lg leading-relaxed text-on-surface-variant">
           Let&apos;s connect if you&apos;re building something ambitious, or
           just enjoy a good conversation about strategy, leadership, or
           career growth.

@@ -74,15 +74,55 @@ export default async function ArticlePage({
           {site.name}
         </p>
 
-        <div className="mt-10 space-y-6">
-          {article.body.map((paragraph, i) => (
-            <p
-              key={i}
-              className="font-body text-body-lg leading-relaxed text-on-surface"
-            >
-              {paragraph}
-            </p>
-          ))}
+        <div className="mt-10">
+          {article.body.map((block, i) => {
+            if (block.type === "h2") {
+              return (
+                <h2
+                  key={i}
+                  className="mt-12 font-display text-headline-md text-primary first:mt-0"
+                >
+                  {block.text}
+                </h2>
+              );
+            }
+            if (block.type === "h3") {
+              return (
+                <h3
+                  key={i}
+                  className="mt-8 font-display text-headline-sm text-primary"
+                >
+                  {block.text}
+                </h3>
+              );
+            }
+            if (block.type === "list") {
+              return (
+                <ul key={i} className="mt-6 space-y-3">
+                  {block.items.map((item, j) => (
+                    <li
+                      key={j}
+                      className="flex items-start gap-3 font-body text-body-lg leading-relaxed text-on-surface"
+                    >
+                      <span
+                        className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary-container"
+                        aria-hidden="true"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <p
+                key={i}
+                className="mt-6 font-body text-body-lg leading-relaxed text-on-surface first:mt-0"
+              >
+                {block.text}
+              </p>
+            );
+          })}
         </div>
       </Container>
     </article>

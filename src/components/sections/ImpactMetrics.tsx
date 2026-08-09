@@ -53,7 +53,7 @@ export default function ImpactMetrics({
           {impactSection.description}
         </p>
 
-        <div className="mt-12 grid grid-cols-1 divide-y divide-outline-variant/20 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:divide-y-0 lg:grid-cols-5 lg:gap-x-0 lg:divide-x">
+        <div className="mt-12 grid grid-cols-1 divide-y divide-outline-variant/20 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:divide-y-0 lg:grid-cols-4 lg:gap-x-0 lg:divide-x">
           {metrics.map((metric) => (
             <div key={metric.label} className="px-2 py-8 first:pt-0 sm:px-0 sm:py-0 lg:px-6">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">

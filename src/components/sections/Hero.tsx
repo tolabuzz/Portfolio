@@ -59,9 +59,6 @@ export default function Hero() {
               className="object-cover"
             />
           </div>
-          <p className="mt-2 text-right font-body text-caption text-outline">
-            Photo: {site.heroPhoto.credit}
-          </p>
         </div>
       </div>
     </section>

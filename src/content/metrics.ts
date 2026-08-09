@@ -17,12 +17,6 @@ export const metrics: Metric[] = [
     icon: "trendUp",
   },
   {
-    value: "400+",
-    label: "Enterprise Customers Covered",
-    caption: "Covered by a full redesign of pricing structure and governance.",
-    icon: "customers",
-  },
-  {
     value: "10,000+",
     label: "Employees Impacted",
     caption: "Through a large-scale organizational transformation program.",

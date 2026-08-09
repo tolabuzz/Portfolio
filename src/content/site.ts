@@ -11,11 +11,10 @@ export const site = {
   twitter: "https://x.com/tolaoladiji",
   roles: ["Strategy", "Transformation", "Operations"],
   positioningStatement:
-    "I partner with executive teams to turn complex organizational challenges into clear strategy, disciplined execution, and measurable results — across consulting, technology, and healthcare.",
+    "I work at the intersection of strategy, transformation, and execution, helping organizations solve complex problems and deliver meaningful results. My experience spans financial services, healthcare, technology, and consulting.",
   heroPhoto: {
     src: "/images/tola-oladiji-portrait.jpg",
     alt: "Portrait of Tola Oladiji",
-    credit: "Ifedayo.x",
   },
 } as const;
 

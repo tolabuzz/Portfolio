@@ -31,10 +31,34 @@ export default function Header() {
         scrolled && "shadow-sm"
       )}
     >
-      <Container as="nav" className="flex items-center justify-between gap-4 py-5 md:py-6">
+      <Container as="nav" className="relative flex items-center justify-between gap-4 py-5 md:py-6">
+        <button
+          type="button"
+          className="absolute left-0 top-1/2 -translate-y-1/2 text-primary md:hidden"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          <svg
+            className="h-7 w-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            aria-hidden="true"
+          >
+            {mobileOpen ? (
+              <path d="M6 6l12 12M18 6l-12 12" strokeLinecap="round" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+            )}
+          </svg>
+        </button>
+
         <Link
           href="/"
-          className="shrink-0 whitespace-nowrap font-display text-headline-sm text-primary transition-opacity hover:opacity-80 lg:text-headline-md"
+          className="mx-auto shrink-0 whitespace-nowrap font-display text-headline-sm text-primary transition-opacity hover:opacity-80 md:mx-0 lg:text-headline-md"
         >
           {site.name}
         </Link>
@@ -72,30 +96,6 @@ export default function Header() {
             Contact
           </Link>
         </div>
-
-        <button
-          type="button"
-          className="text-primary md:hidden"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setMobileOpen((v) => !v)}
-        >
-          <svg
-            className="h-7 w-7"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            {mobileOpen ? (
-              <path d="M6 6l12 12M18 6l-12 12" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
       </Container>
 
       {mobileOpen && (

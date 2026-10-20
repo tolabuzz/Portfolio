@@ -31,10 +31,10 @@ export default function Header() {
         scrolled && "shadow-sm"
       )}
     >
-      <Container as="nav" className="relative flex items-center justify-between gap-4 py-5 md:py-6">
+      <Container as="nav" className="relative flex items-center justify-between gap-4 py-5 xl:py-6">
         <button
           type="button"
-          className="absolute left-0 top-1/2 -translate-y-1/2 text-primary md:hidden"
+          className="absolute left-0 top-1/2 -translate-y-1/2 text-primary xl:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
@@ -58,12 +58,12 @@ export default function Header() {
 
         <Link
           href="/"
-          className="mx-auto shrink-0 whitespace-nowrap font-display text-headline-sm text-primary transition-opacity hover:opacity-80 md:mx-0 lg:text-headline-md"
+          className="mx-auto shrink-0 whitespace-nowrap font-display text-headline-sm text-primary transition-opacity hover:opacity-80 xl:mx-0 lg:text-headline-md"
         >
           {site.name}
         </Link>
 
-        <ul className="hidden items-center gap-4 font-label text-label-caps uppercase tracking-widest md:flex lg:gap-8">
+        <ul className="hidden items-center gap-4 font-label text-label-caps uppercase tracking-widest xl:flex 2xl:gap-8">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.href);
             const linkClassName = cn(
@@ -88,7 +88,7 @@ export default function Header() {
           })}
         </ul>
 
-        <div className="hidden shrink-0 md:block">
+        <div className="hidden shrink-0 xl:block">
           <Link
             href="/contact"
             className="whitespace-nowrap rounded-full bg-primary px-5 py-3 font-label text-label-caps uppercase text-on-primary shadow-sm transition-colors hover:bg-primary-container lg:px-6"
@@ -101,7 +101,7 @@ export default function Header() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="border-t border-outline-variant/30 bg-background md:hidden"
+          className="border-t border-outline-variant/30 bg-background xl:hidden"
         >
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => {

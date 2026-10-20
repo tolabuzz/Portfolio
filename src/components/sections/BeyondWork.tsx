@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { beyondWork } from "@/content/beyondWork";
@@ -21,6 +22,13 @@ export default function BeyondWork() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="mt-12 border-t border-outline-variant/20 pt-8">
+          <h3 className="font-display text-headline-sm text-primary">Wellness &amp; Faith</h3>
+          <p className="mt-3 mb-6 max-w-2xl font-body text-body-md text-on-surface-variant">
+            Explore my guides, affirmations, and devotional for emotional wellbeing and personal reflection.
+          </p>
+          <Button href="/resources" variant="secondary">Explore Resources</Button>
         </div>
       </Container>
     </section>

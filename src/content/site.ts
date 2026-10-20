@@ -24,6 +24,7 @@ export const navLinks = [
   { label: "Work", href: "/work" },
   { label: "Expertise", href: "/expertise" },
   { label: "Insights", href: "/insights" },
+  { label: "Resources", href: "/resources" },
   // Zone boundary: this path is proxied via next.config.ts's rewrites() to a
   // separate Next.js app, so it's rendered as a plain <a> (see Header.tsx)
   // rather than next/link — crossing zones needs a full page load, not a

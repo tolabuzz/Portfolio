@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BookACall from "@/components/sections/BookACall";
 import Contact from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <Contact headingLevel="h1" />;
+  return (
+    <>
+      <Contact headingLevel="h1" />
+      <BookACall />
+    </>
+  );
 }

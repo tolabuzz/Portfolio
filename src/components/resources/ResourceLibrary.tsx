@@ -1,13 +1,23 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import Image from "next/image";
 import { resources } from "@/content/resources";
 
 function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
-  const [unlocked, setUnlocked] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
+
+  function download() {
+    const link = document.createElement("a");
+    link.href = `/resources/${resource.slug}.pdf`;
+    link.download = `${resource.slug}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,8 +40,10 @@ function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
         const result = await response.json().catch(() => null);
         throw new Error(result?.error || "We couldn’t submit your details. Please try again.");
       }
-      setUnlocked(true);
+      setSubmitted(true);
       form.reset();
+      dialogRef.current?.close();
+      download();
     } catch (error) {
       setError(error instanceof Error ? error.message : "Please try again.");
     } finally {
@@ -43,45 +55,69 @@ function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
 
   return (
     <div className="mt-6 border-t border-outline-variant/30 pt-6">
-      <div role="status" aria-live="polite">
-        {unlocked && (
-            <p className="font-body text-body-lg text-primary">
-              Thank you! Your book is ready to download.
-            </p>
-          )}
+      <button
+        type="button"
+        aria-label={`Download ${resource.title}`}
+        aria-haspopup={submitted ? undefined : "dialog"}
+        onClick={() => {
+          if (submitted) download();
+          else {
+            setError("");
+            dialogRef.current?.showModal();
+          }
+        }}
+        className="inline-flex justify-center rounded-full bg-primary px-8 py-3 font-label text-label-caps uppercase text-on-primary transition-colors hover:bg-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
+        Download
+      </button>
+      <p role="status" aria-live="polite" className="mt-3 font-body text-caption text-on-surface-variant">
+        {submitted ? "Thank you! Your download has started. Click Download to get another copy." : ""}
+      </p>
+      <dialog
+        ref={dialogRef}
+        aria-labelledby={`${resource.slug}-form-title`}
+        aria-describedby={`${resource.slug}-form-description`}
+        onCancel={(event) => { if (pending) event.preventDefault(); }}
+        className="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%_-_2rem)] max-w-lg overflow-y-auto rounded-xl border border-outline-variant/30 bg-background p-6 text-on-surface shadow-xl backdrop:bg-black/50 md:p-8"
+      >
+        <div className="flex items-start justify-between gap-4">
+          <h2 id={`${resource.slug}-form-title`} className="font-display text-headline-sm text-primary">
+            Download {resource.title}
+          </h2>
+          <button
+            type="button"
+            onClick={() => dialogRef.current?.close()}
+            disabled={pending}
+            aria-label="Close download form"
+            className="rounded-md px-2 py-1 text-primary focus-visible:outline-2 focus-visible:outline-primary disabled:opacity-50"
+          >
+            <span aria-hidden="true">✕</span>
+          </button>
         </div>
-        {!unlocked && (
-          <>
-            <p className="mt-3 font-body text-body-md text-on-surface-variant">
-              Share your details to download this book.
-            </p>
-            <form onSubmit={submit} className="mt-6" aria-label={`Get ${resource.title}`} aria-busy={pending}>
-              <div className="grid gap-4">
-                <label htmlFor={`${resource.slug}-name`} className="font-body text-body-md text-on-surface">
-                  Name
-                  <input id={`${resource.slug}-name`} name="name" autoComplete="name" required maxLength={120} pattern=".*\S.*" className={inputClass} />
-                </label>
-                <label htmlFor={`${resource.slug}-email`} className="font-body text-body-md text-on-surface">
-                  Email
-                  <input id={`${resource.slug}-email`} name="email" type="email" autoComplete="email" required maxLength={254} className={inputClass} />
-                </label>
-                <label htmlFor={`${resource.slug}-country`} className="font-body text-body-md text-on-surface">
-                  Country
-                  <input id={`${resource.slug}-country`} name="country" autoComplete="country-name" required maxLength={100} pattern=".*\S.*" className={inputClass} />
-                </label>
-              </div>
-              {error && <p role="alert" className="mt-4 font-body text-body-md text-primary">{error}</p>}
-              <button type="submit" disabled={pending} className="mt-6 rounded-full bg-primary px-8 py-4 font-label text-label-caps uppercase text-on-primary transition-colors hover:bg-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60">
-                {pending ? "Submitting…" : "Submit & Unlock Download"}
-              </button>
-            </form>
-          </>
-        )}
-      {unlocked && (
-        <a href={`/resources/${resource.slug}.pdf`} download={`${resource.slug}.pdf`} aria-label={`Download ${resource.title} (PDF)`} className="mt-4 inline-flex justify-center rounded-full bg-primary px-5 py-3 font-label text-label-caps uppercase text-on-primary transition-colors hover:bg-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-          Download PDF
-        </a>
-      )}
+        <p id={`${resource.slug}-form-description`} className="mt-3 font-body text-body-md text-on-surface-variant">
+          Enter your details below. Your download will start after you submit.
+        </p>
+        <form onSubmit={submit} className="mt-6" aria-label={`Get ${resource.title}`} aria-busy={pending}>
+          <div className="grid gap-4">
+            <label htmlFor={`${resource.slug}-name`} className="font-body text-body-md text-on-surface">
+              Name
+              <input id={`${resource.slug}-name`} name="name" autoComplete="name" required maxLength={120} pattern=".*\S.*" className={inputClass} />
+            </label>
+            <label htmlFor={`${resource.slug}-email`} className="font-body text-body-md text-on-surface">
+              Email
+              <input id={`${resource.slug}-email`} name="email" type="email" autoComplete="email" required maxLength={254} className={inputClass} />
+            </label>
+            <label htmlFor={`${resource.slug}-country`} className="font-body text-body-md text-on-surface">
+              Country
+              <input id={`${resource.slug}-country`} name="country" autoComplete="country-name" required maxLength={100} pattern=".*\S.*" className={inputClass} />
+            </label>
+          </div>
+          {error && <p role="alert" className="mt-4 font-body text-body-md text-primary">{error}</p>}
+          <button type="submit" disabled={pending} className="mt-6 w-full rounded-full bg-primary px-6 py-4 font-label text-label-caps uppercase text-on-primary transition-colors hover:bg-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60">
+            {pending ? "Submitting…" : "Submit & Download"}
+          </button>
+        </form>
+      </dialog>
     </div>
   );
 }

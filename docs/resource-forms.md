@@ -1,9 +1,12 @@
 # Resource downloads and calls
 
-Each book has its own name, email, and country form. Submitting a form reveals
-only that book’s download button after Formspree confirms receipt. Each
-submission includes the selected book’s slug in the resource field. Failed
-submissions preserve the entered details and do not unlock the downloads.
+Each book initially shows a Download button. Clicking it opens that book’s
+name, email, and country form in a dialog. Submit & Download saves the details
+to Formspree, then closes the dialog and starts that PDF download automatically.
+Each submission includes the selected book’s slug in the resource field.
+Failed submissions preserve the entered details and never start a download.
+After a successful submission, the book’s Download button can retry the download
+without another submission for the rest of that page visit.
 This is a lead capture flow: the static PDFs remain publicly addressable; it
 is not an authentication or paid-access system.
 

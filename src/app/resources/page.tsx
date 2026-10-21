@@ -17,7 +17,7 @@ export default function ResourcesPage() {
         <Container>
           <SectionHeading
             level="h1"
-            eyebrow="The Library"
+            eyebrow="Resources"
             title="Resources"
             description="A collection of my books, guides, and resources across a range of topics. Browse the collection and download a copy to keep."
           />

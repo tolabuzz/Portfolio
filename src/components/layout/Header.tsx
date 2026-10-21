@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "./Container";
+import NavigationGroup from "./NavigationGroup";
 import { navLinks, site } from "@/content/site";
 import { cn } from "@/lib/cn";
 
@@ -65,6 +66,13 @@ export default function Header() {
 
         <ul className="hidden items-center gap-4 font-label text-label-caps uppercase tracking-widest xl:flex 2xl:gap-8">
           {navLinks.map((link) => {
+            if ("children" in link) {
+              return (
+                <li key={link.label}>
+                  <NavigationGroup label={link.label} links={link.children} />
+                </li>
+              );
+            }
             const isActive = isActiveLink(link.href);
             const linkClassName = cn(
               "border-b-2 pb-1 transition-colors",
@@ -105,6 +113,17 @@ export default function Header() {
         >
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => {
+              if ("children" in link) {
+                return (
+                  <NavigationGroup
+                    key={link.label}
+                    label={link.label}
+                    links={link.children}
+                    mobile
+                    onNavigate={closeMobileMenu}
+                  />
+                );
+              }
               const mobileClassName = cn(
                 "rounded-md px-2 py-3 font-label text-label-caps uppercase tracking-widest transition-colors hover:bg-surface-container-low hover:text-primary",
                 isActiveLink(link.href) ? "text-primary" : "text-on-surface-variant"

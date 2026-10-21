@@ -20,9 +20,14 @@ export const site = {
 
 export const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Work", href: "/work" },
-  { label: "Expertise", href: "/expertise" },
+  {
+    label: "What I Do",
+    children: [
+      { label: "Experience", href: "/experience" },
+      { label: "Work", href: "/work" },
+      { label: "Expertise", href: "/expertise" },
+    ],
+  },
   { label: "Insights", href: "/insights" },
   { label: "Resources", href: "/resources" },
   // Zone boundary: this path is proxied via next.config.ts's rewrites() to a

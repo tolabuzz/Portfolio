@@ -82,7 +82,7 @@ function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
       >
         <div className="flex items-start justify-between gap-4">
           <h2 id={`${resource.slug}-form-title`} className="font-display text-headline-sm text-primary">
-            Download {resource.title}
+            Get Your Copy of {resource.title}
           </h2>
           <button
             type="button"
@@ -95,7 +95,7 @@ function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
           </button>
         </div>
         <p id={`${resource.slug}-form-description`} className="mt-3 font-body text-body-md text-on-surface-variant">
-          Enter your details below. Your download will start after you submit.
+          Enter your details below.
         </p>
         <form onSubmit={submit} className="mt-6" aria-label={`Get ${resource.title}`} aria-busy={pending}>
           <div className="grid gap-4">
@@ -114,7 +114,7 @@ function ResourceForm({ resource }: { resource: (typeof resources)[number] }) {
           </div>
           {error && <p role="alert" className="mt-4 font-body text-body-md text-primary">{error}</p>}
           <button type="submit" disabled={pending} className="mt-6 w-full rounded-full bg-primary px-6 py-4 font-label text-label-caps uppercase text-on-primary transition-colors hover:bg-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60">
-            {pending ? "Submitting…" : "Submit & Download"}
+            {pending ? "Submitting…" : "Submit"}
           </button>
         </form>
       </dialog>

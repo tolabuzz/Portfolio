@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ResourceLibrary from "@/components/resources/ResourceLibrary";
-import BookACall from "@/components/sections/BookACall";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -25,7 +24,6 @@ export default function ResourcesPage() {
           <ResourceLibrary />
         </Container>
       </section>
-      <BookACall />
     </>
   );
 }

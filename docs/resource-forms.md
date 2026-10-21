@@ -1,7 +1,7 @@
 # Resource downloads and calls
 
 Each book initially shows a Download button. Clicking it opens that book’s
-name, email, and country form in a dialog. Submit & Download saves the details
+name, email, and country form in a dialog. Submit saves the details
 to Formspree, then closes the dialog and starts that PDF download automatically.
 Each submission includes the selected book’s slug in the resource field.
 Failed submissions preserve the entered details and never start a download.
@@ -28,17 +28,19 @@ list.
 
 ## Calls
 
-The booking section appears on Resources and Contact. Coaching links to
-https://bit.ly/coachingxtola. The strategy call button is disabled with a
-"Coming soon" label until `STRATEGY_CALL_URL` is set to the final booking URL
-in Vercel and the site is redeployed.
+Booking now lives at `/book-a-call`, linked from the main navigation.
+Coaching links to https://my.forms.app/cewafrica/coachingbytola.
+Book a Strategy Call opens an enquiry form with name, email, country, and a
+short description of the problem. The server sends these details to
+https://formspree.io/f/mdearwbr. Success confirms receipt of an enquiry, not a
+scheduled appointment. Resource submissions still use their original endpoint.
 
 ## Checks
 
 Use Node.js 24 (as in this environment):
 
 ```sh
-node --experimental-strip-types --test tests/resource-access.test.mjs
+node --experimental-strip-types --test tests/*.test.mjs
 npm run lint
 npm run build
 ```

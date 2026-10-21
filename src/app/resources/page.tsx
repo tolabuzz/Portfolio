@@ -6,7 +6,7 @@ import ResourceLibrary from "@/components/resources/ResourceLibrary";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Free guides, affirmations, and a Christian devotional by Tola Oladiji on emotional wellbeing, personal growth, and faith.",
+    "Explore books, guides, and other resources by Tola Oladiji across a range of topics.",
   alternates: { canonical: "/resources" },
 };
 
@@ -17,9 +17,9 @@ export default function ResourcesPage() {
         <Container>
           <SectionHeading
             level="h1"
-            eyebrow="Wellness & Faith"
+            eyebrow="The Library"
             title="Resources"
-            description="Resources I’ve written to help you reflect, nurture your emotional wellbeing, and grow in faith. Share your details to download a free copy to keep."
+            description="A collection of my books, guides, and resources across a range of topics. Browse the collection and download a copy to keep."
           />
           <ResourceLibrary />
         </Container>

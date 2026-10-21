@@ -28,12 +28,18 @@ list.
 
 ## Calls
 
-Booking now lives at `/book-a-call`, linked from the main navigation.
-Coaching links to https://my.forms.app/cewafrica/coachingbytola.
-Book a Strategy Call opens an enquiry form with name, email, country, and a
-short description of the problem. The server sends these details to
-https://formspree.io/f/mdearwbr. Success confirms receipt of an enquiry, not a
-scheduled appointment. Resource submissions still use their original endpoint.
+Booking lives at `/book-a-call`, linked from the main navigation. Each button
+opens a standalone, shareable form page:
+
+- `/book-a-call/strategy` sends name, phone, email, and message to
+  https://formspree.io/f/mdearwbr.
+- `/book-a-call/coaching` sends first and last name, phone, email, up to three selected
+  coaching areas, and financial readiness to https://formspree.io/f/xkjolqlv.
+  Email confirmation must match, and the page states that sessions are not free.
+
+Success confirms receipt of an enquiry, not a scheduled appointment. Resource
+submissions still use their original endpoint. The homepage What I Do button
+links to `/what-i-do`, combining Experience, Work, and Expertise.
 
 ## Checks
 

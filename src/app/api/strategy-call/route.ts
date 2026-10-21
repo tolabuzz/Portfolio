@@ -13,14 +13,14 @@ export async function POST(request: Request) {
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error("Invalid fields");
     fields = parsed as Record<string, unknown>;
   } catch {
-    return Response.json({ error: "Please enter your name, email, and country." }, { status: 400 });
+    return Response.json({ error: "Please enter your name, phone number, and email." }, { status: 400 });
   }
 
   const name = typeof fields.name === "string" ? fields.name.trim() : "";
   const email = typeof fields.email === "string" ? fields.email.trim() : "";
-  const country = typeof fields.country === "string" ? fields.country.trim() : "";
-  if (!name || name.length > 120 || !country || country.length > 100 || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return Response.json({ error: "Please enter your name, a valid email address, and your country." }, { status: 400 });
+  const phone = typeof fields.phone === "string" ? fields.phone.trim() : "";
+  if (!name || name.length > 120 || !phone || phone.length > 40 || !/^[+\d\s().-]+$/.test(phone) || phone.replace(/\D/g, "").length < 7 || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return Response.json({ error: "Please enter your name, a valid phone number, and a valid email address." }, { status: 400 });
   }
 
   const message = typeof fields.message === "string" ? fields.message.trim() : "";
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ name, email, country, message, source: "Strategy call enquiry" }),
+      body: JSON.stringify({ name, phone, email, message, source: "Strategy call enquiry" }),
       signal: AbortSignal.timeout(15000),
       redirect: "error",
     });

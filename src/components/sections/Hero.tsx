@@ -18,8 +18,8 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href="/work" variant="primary">
-              View My Work
+            <Button href="/what-i-do" variant="primary">
+              What I Do
             </Button>
             <Button href="/about" variant="secondary">
               About Me

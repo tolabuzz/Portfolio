@@ -1,5 +1,4 @@
 import Container from "@/components/layout/Container";
-import StrategyCallForm from "@/components/booking/StrategyCallForm";
 import Button from "@/components/ui/Button";
 
 export default function BookACall() {
@@ -15,10 +14,12 @@ export default function BookACall() {
           next step.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="https://my.forms.app/cewafrica/coachingbytola" external>
+          <Button href="/book-a-call/coaching">
             Book a Coaching Call
           </Button>
-          <StrategyCallForm />
+          <Button href="/book-a-call/strategy" variant="secondary">
+            Book a Strategy Call
+          </Button>
         </div>
       </Container>
     </section>

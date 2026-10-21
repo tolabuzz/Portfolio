@@ -23,6 +23,11 @@ export async function POST(request: Request) {
     return Response.json({ error: "Please enter your name, a valid email address, and your country." }, { status: 400 });
   }
 
+  const resource = fields.resource;
+  if (typeof resource !== "string" || !["living-well", "positive-vibes", "god-wants-you-well"].includes(resource)) {
+    return Response.json({ error: "Please choose a valid book." }, { status: 400 });
+  }
+
   // This public form endpoint was supplied by the site owner. Vercel can override it.
   const endpoint = process.env.RESOURCE_FORM_ENDPOINT ?? "https://formspree.io/f/xbgdvzww";
   if (!endpoint || !/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint)) {
@@ -33,7 +38,7 @@ export async function POST(request: Request) {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ name, email, country, source: "Website resources" }),
+      body: JSON.stringify({ name, email, country, resource, source: "Website resources" }),
       signal: AbortSignal.timeout(15000),
       redirect: "error",
     });

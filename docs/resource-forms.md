@@ -1,7 +1,8 @@
 # Resource downloads and calls
 
-The resources page asks for name, email, and country once per page visit, then
-reveals all three download buttons after Formspree confirms receipt. Failed
+Each book has its own name, email, and country form. Submitting a form reveals
+only that book’s download button after Formspree confirms receipt. Each
+submission includes the selected book’s slug in the resource field. Failed
 submissions preserve the entered details and do not unlock the downloads.
 This is a lead capture flow: the static PDFs remain publicly addressable; it
 is not an authentication or paid-access system.

@@ -127,8 +127,8 @@ export default function ResourceLibrary() {
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {resources.map((resource) => (
         <article key={resource.slug} className="flex flex-col overflow-hidden rounded-lg border border-outline-variant/30 bg-background shadow-sm">
-          <div className="relative h-80 bg-surface-container-low">
-            <Image src={`/resources/${resource.slug}.png`} alt={`Cover of ${resource.title} by Tola Oladiji`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-contain p-6" />
+          <div className="relative aspect-[2/3] w-full">
+            <Image src={`/resources/${resource.slug}.png`} alt={`Cover of ${resource.title} by Tola Oladiji`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="flex flex-1 flex-col p-6 md:p-8">
             <p className="font-label text-label-caps uppercase tracking-widest text-secondary">{resource.category}</p>

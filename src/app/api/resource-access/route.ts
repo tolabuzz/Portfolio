@@ -1,3 +1,5 @@
+import resources from "../../../content/resources.json" with { type: "json" };
+
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const host = request.headers.get("host") || new URL(request.url).host;
@@ -24,7 +26,8 @@ export async function POST(request: Request) {
   }
 
   const resource = fields.resource;
-  if (typeof resource !== "string" || !["living-well", "positive-vibes", "god-wants-you-well"].includes(resource)) {
+  const book = resources.find((book) => book.slug === resource);
+  if (!book) {
     return Response.json({ error: "Please choose a valid book." }, { status: 400 });
   }
 
@@ -38,7 +41,7 @@ export async function POST(request: Request) {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ name, email, country, resource, source: "Website resources" }),
+      body: JSON.stringify({ name, email, country, resource: book.slug, bookTitle: book.title, source: "Website resources" }),
       signal: AbortSignal.timeout(15000),
       redirect: "error",
     });

@@ -3,7 +3,10 @@
 Each book initially shows a Download button. Clicking it opens that book’s
 name, email, and country form in a dialog. Submit saves the details
 to Formspree, then closes the dialog and starts that PDF download automatically.
-Each submission includes the selected book’s slug in the resource field.
+Each submission automatically includes the selected book’s slug in `resource`
+and its full title in `bookTitle`, visible in Formspree. Visitors do not enter
+these fields. This records a book request, not confirmation that a device
+finished downloading the PDF.
 Failed submissions preserve the entered details and never start a download.
 After a successful submission, the book’s Download button can retry the download
 without another submission for the rest of that page visit.

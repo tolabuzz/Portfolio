@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import resources from "../src/content/resources.json" with { type: "json" };
 import { POST } from "../src/app/api/resource-access/route.ts";
 
 test("resource access validates details and unlocks only after confirmed delivery", async (t) => {
@@ -20,7 +21,7 @@ test("resource access validates details and unlocks only after confirmed deliver
   const deliver = t.mock.method(globalThis, "fetch", async (url, options) => {
     assert.equal(url, process.env.RESOURCE_FORM_ENDPOINT ?? "https://formspree.io/f/xbgdvzww");
     assert.deepEqual(JSON.parse(options.body), {
-      name: "Test Visitor", email: "visitor@example.com", country: "Nigeria", resource: expectedResource, source: "Website resources",
+      name: "Test Visitor", email: "visitor@example.com", country: "Nigeria", resource: expectedResource, bookTitle: resources.find((book) => book.slug === expectedResource).title, source: "Website resources",
     });
     return Response.json({ ok: true });
   });
@@ -65,7 +66,7 @@ test("resource access validates details and unlocks only after confirmed deliver
   });
 
   await t.test("records the selected book independently for every resource", async () => {
-    for (const resource of ["living-well", "positive-vibes", "god-wants-you-well"]) {
+    for (const resource of ["living-well", "i-am", "god-wants-you-well"]) {
       expectedResource = resource;
       assert.equal((await POST(request({ ...valid, resource }))).status, 200);
       assert.equal(JSON.parse(deliver.mock.calls.at(-1).arguments[1].body).resource, resource);

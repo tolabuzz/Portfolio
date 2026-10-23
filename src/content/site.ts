@@ -22,6 +22,7 @@ export const navLinks = [
   { label: "About", href: "/about" },
   {
     label: "What I Do",
+    href: "/what-i-do",
     children: [
       { label: "Experience", href: "/experience" },
       { label: "Work", href: "/work" },

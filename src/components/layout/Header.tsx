@@ -69,7 +69,7 @@ export default function Header() {
             if ("children" in link) {
               return (
                 <li key={link.label}>
-                  <NavigationGroup label={link.label} links={link.children} />
+                  <NavigationGroup label={link.label} href={link.href} links={link.children} />
                 </li>
               );
             }
@@ -118,6 +118,7 @@ export default function Header() {
                   <NavigationGroup
                     key={link.label}
                     label={link.label}
+                    href={link.href}
                     links={link.children}
                     mobile
                     onNavigate={closeMobileMenu}
